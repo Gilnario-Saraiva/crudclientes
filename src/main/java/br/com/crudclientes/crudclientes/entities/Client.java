@@ -1,6 +1,8 @@
 package br.com.crudclientes.crudclientes.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -11,9 +13,11 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Campo requerido")
     private String name;
     private String cpf;
     private Double income;
+    @PastOrPresent
     private LocalDate birthDate;
     private Integer children;
 
