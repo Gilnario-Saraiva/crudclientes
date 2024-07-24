@@ -18,6 +18,7 @@ public class Client {
     private String cpf;
     private Double income;
     @PastOrPresent
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private LocalDate birthDate;
     private Integer children;
 
